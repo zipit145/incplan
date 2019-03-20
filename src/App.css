@@ -24,8 +24,19 @@
 }
 
 .header {
-  background-color: blue;
+  background-color: rgb(0, 102, 153);
   height: 10vh;
+  width: 100%;
+}
+
+
+
+.footer{
+  background-color: rgb(0, 102, 153);
+  height: 10vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0vh;
 }
 
 @keyframes App-logo-spin {
