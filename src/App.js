@@ -16,14 +16,34 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 class App extends Component {
+  constructor(props, context) {
+    super(props, context);
+
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+
+    this.state = {
+      show: false,
+      test:"test"
+    };
+  }
+
+  handleClose() {
+    this.setState({ show: false });
+  }
+
+  handleShow() {
+    this.setState({ show: true });
+  }
   render() {
     return (
       <div className="App">
             <Router>
               <Header />
-              <Route exact path="/" component={Home} />
-              <Route path='/client' component={ClientHome}/>
-              <Button variant="dark" href="/client">Link</Button>
+              <Route exact path="/" render={(props) => <Home test ={this.state.test} show={this.state.show} handleClose={this.handleClose} handleShow={this.handleShow}/>} />
+              <Route path='/client' render={
+                <ClientHome handleClose={this.handleClose} handleOpen={this.handleOpen}/>
+              }/>
               <Footer />
             </Router>
       </div>
