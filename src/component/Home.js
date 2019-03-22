@@ -5,26 +5,39 @@ import { Modal } from 'react-bootstrap';
 const Home = (props) => {
   return (
     <>
-    <div className="homePageButtons">
-      <Button variant="primary" onClick={props.handleShow}>
-       Login
-      </Button>
-      <Button variant="primary" onClick={props.handleShow}>
-       Sign Up
-      </Button>
-    </div>
-
-
-      <Modal show={props.show} onHide={props.handleClose}>
+      <div className="homePageButtons">
+        <Button variant="primary" onClick={props.handleLogInShow}>
+        Login
+        </Button>
+        <Button variant="primary" onClick={props.handleSignUpShow}>
+        Sign Up
+        </Button>
+      </div>
+      <Modal show={props.signUpShow} onHide={props.handleSignUpClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Sign Up</Modal.Title>
         </Modal.Header>
         <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={props.handleClose}>
+          <Button variant="secondary" onClick={props.handleSignUpClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={props.handleClose}>
+          <Button variant="primary" onClick={props.handleSignUpClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal show={props.logInShow} onHide={props.handleLogInClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Log in</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={props.handleLogInClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={props.handleLogInClose}>
             Save Changes
           </Button>
         </Modal.Footer>

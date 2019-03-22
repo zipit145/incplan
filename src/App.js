@@ -19,28 +19,44 @@ class App extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.handleShow = this.handleShow.bind(this);
-    this.handleClose = this.handleClose.bind(this);
+    this.handleLogInShow = this.handleLogInShow.bind(this);
+    this.handleSignUpShow = this.handleSignUpShow.bind(this);
+    this.handleLogInClose = this.handleLogInClose.bind(this);
+    this.handleSignUpClose = this.handleSignUpClose.bind(this);
 
     this.state = {
-      show: false,
-      test:"test"
+      logInShow: false,
+      signUpShow: false,
     };
   }
 
-  handleClose() {
-    this.setState({ show: false });
+  handleLogInClose() {
+    this.setState({ logInShow: false });
+  }
+  handleSignUpClose() {
+    this.setState({ signUpShow: false });
   }
 
-  handleShow() {
-    this.setState({ show: true });
+  handleSignUpShow() {
+    this.setState({ signUpShow: true });
+  }
+  handleLogInShow() {
+    this.setState({ logInShow: true });
   }
   render() {
     return (
       <div className="App">
             <Router>
               <Header />
-              <Route exact path="/" render={(props) => <Home test ={this.state.test} show={this.state.show} handleClose={this.handleClose} handleShow={this.handleShow}/>} />
+              <Route exact path="/" render={
+                (props) => <Home
+                  logInShow={this.state.logInShow}
+                  signUpShow={this.state.signUpShow}
+                  handleLogInClose={this.handleLogInClose}
+                  handleLogInShow={this.handleLogInShow}
+                  handleSignUpClose={this.handleSignUpClose}
+                  handleSignUpShow={this.handleSignUpShow}/>
+              } />
               <Route path='/client' render={
                 <ClientHome handleClose={this.handleClose} handleOpen={this.handleOpen}/>
               }/>
