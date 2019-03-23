@@ -23,26 +23,64 @@ class App extends Component {
     this.handleSignUpShow = this.handleSignUpShow.bind(this);
     this.handleLogInClose = this.handleLogInClose.bind(this);
     this.handleSignUpClose = this.handleSignUpClose.bind(this);
+    this.handleMailForwardingShow = this.handleMailForwardingShow.bind(this);
+    this.handleCorporateDocumentsShow = this.handleCorporateDocumentsShow.bind(this);
+    this.handleMailForwardingClose = this.handleMailForwardingClose.bind(this);
+    this.handleCorporateDocumentsClose = this.handleCorporateDocumentsClose.bind(this);
+    this.handleCreateNewCompanyShow = this.handleCreateNewCompanyShow.bind(this);
+    this.handleEditProfileShow = this.handleEditProfileShow.bind(this);
+    this.handleCreateNewCompanyClose = this.handleCreateNewCompanyClose.bind(this);
+    this.handleEditProfileClose = this.handleEditProfileClose.bind(this);
 
     this.state = {
       logInShow: false,
       signUpShow: false,
+      mailForwardingShow: false,
+      corporateDocumentsShow: false,
+      createNewCompanyShow: false ,
+      editProfileShow: false
     };
   }
 
+  handleLogInShow() {
+    this.setState({ logInShow: true });
+  }
   handleLogInClose() {
     this.setState({ logInShow: false });
+  }
+  handleSignUpShow() {
+    this.setState({ signUpShow: true });
   }
   handleSignUpClose() {
     this.setState({ signUpShow: false });
   }
+  handleMailForwardingShow() {
+    this.setState({ mailForwardingShow: true });
+  }
+  handleMailForwardingClose() {
+    this.setState({ mailForwardingShow: false });
+  }
+  handleCorporateDocumentsShow() {
+    console.log("active")
+    this.setState({ corporateDocumentsShow: true });
+  }
+  handleCorporateDocumentsClose() {
+    this.setState({ corporateDocumentsShow: false });
+  }
+  handleCreateNewCompanyShow() {
+    this.setState({ createNewCompanyShow: true });
+  }
+  handleCreateNewCompanyClose() {
+    this.setState({ createNewCompanyShow: false });
+  }
+  handleEditProfileShow() {
+    this.setState({ editProfileShow: true });
+  }
+  handleEditProfileClose() {
+    this.setState({ editProfileShow: false });
+  }
 
-  handleSignUpShow() {
-    this.setState({ signUpShow: true });
-  }
-  handleLogInShow() {
-    this.setState({ logInShow: true });
-  }
+
   render() {
     return (
       <div className="App">
@@ -59,12 +97,19 @@ class App extends Component {
               } />
               <Route exact path='/client' render={
                 (props) => <ClientHome
-                  logInShow={this.state.logInShow}
-                  signUpShow={this.state.signUpShow}
-                  handleLogInClose={this.handleLogInClose}
-                  handleLogInShow={this.handleLogInShow}
-                  handleSignUpClose={this.handleSignUpClose}
-                  handleSignUpShow={this.handleSignUpShow}/>
+                  mailForwardingShow={this.state.mailForwardingShow}
+                  corporateDocumentsShow={this.state.corporateDocumentsShow}
+                  createNewCompanyShow={this.state.createNewCompanyShow}
+                  editProfileShow={this.state.editProfileShow}
+                  handleMailForwardingClose={this.handleMailForwardingClose}
+                  handleMailForwardingShow={this.handleMailForwardingShow}
+                  handleCorporateDocumentsClose={this.handleCorporateDocumentsClose}
+                  handleCorporateDocumentsShow={this.handleCorporateDocumentsShow}
+                  handleCreateNewCompanyClose={this.handleCreateNewCompanyClose}
+                  handleCreateNewCompanyShow={this.handleCreateNewCompanyShow}
+                  handleEditProfileClose={this.handleEditProfileClose}
+                  handleEditProfileShow={this.handleEditProfileShow}
+                  />
               } />
               <Footer />
             </Router>

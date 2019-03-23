@@ -33,6 +33,10 @@
   margin: auto;
   margin-bottom: 5vh;
 }
+.buttonClientHome{
+  margin: auto;
+  margin-top: 5vh;
+}
 .homePageMessage{
   height: 15vh;
 }
