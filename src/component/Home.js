@@ -42,12 +42,12 @@ const Home = (props) => {
               <Col lg={5}></Col>
               <Col lg={2}>
               <Row>
-                <Button className="buttonLogin" variant="primary" onClick={props.handleLogInShow}>
+                <Button variant="dark" className="buttonLogin" onClick={props.handleLogInShow}>
                   Login
                 </Button>
               </Row>
               <Row>
-                <Button className="buttonLogin" variant="primary" onClick={props.handleSignUpShow}>
+                <Button variant="dark" className="buttonLogin" onClick={props.handleSignUpShow}>
                   Sign Up
                 </Button>
               </Row>
@@ -85,7 +85,7 @@ const Home = (props) => {
           <Button variant="secondary" onClick={props.handleSignUpClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={props.handleSignUpClose}>
+          <Button variant="primary" href="/client">
             Save Changes
           </Button>
         </Modal.Footer>
@@ -121,7 +121,7 @@ const Home = (props) => {
           <Button variant="secondary" onClick={props.handleLogInClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={props.handleLogInClose}>
+          <Button variant="primary"  href="/client">
             Save Changes
           </Button>
         </Modal.Footer>

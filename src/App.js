@@ -57,9 +57,15 @@ class App extends Component {
                   handleSignUpClose={this.handleSignUpClose}
                   handleSignUpShow={this.handleSignUpShow}/>
               } />
-              <Route path='/client' render={
-                <ClientHome handleClose={this.handleClose} handleOpen={this.handleOpen}/>
-              }/>
+              <Route exact path='/client' render={
+                (props) => <ClientHome
+                  logInShow={this.state.logInShow}
+                  signUpShow={this.state.signUpShow}
+                  handleLogInClose={this.handleLogInClose}
+                  handleLogInShow={this.handleLogInShow}
+                  handleSignUpClose={this.handleSignUpClose}
+                  handleSignUpShow={this.handleSignUpShow}/>
+              } />
               <Footer />
             </Router>
       </div>
