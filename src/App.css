@@ -29,7 +29,15 @@
   width: 100%;
 }
 
-
+.buttonLogin{
+  margin: auto;
+}
+.homePageMessage{
+  height: 15vh;
+}
+.homePageMessageSub{
+  height: 5vh;
+}
 
 .footer{
   background-color: rgb(0, 102, 153);
