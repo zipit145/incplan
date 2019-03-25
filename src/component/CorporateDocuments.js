@@ -11,46 +11,48 @@ const CorporateDocuments = (props) => {
       
         <Modal show={props.corporateDocumentsShow} onHide={props.handleCorporateDocumentsClose}>
         <Modal.Header closeButton>
-          <Modal.Title>CorporateDocuments</Modal.Title>
+          <Modal.Title>My Companies</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+        {props.corporateDocumentsShowFirst ? 
           <Form>
-          {props.data.users.companies.map(company => {
-             return (
+            {props.data.users.companies.map(company => {
+                return (
+                <Container>
+                <div className="corporateDocumentCard" >
+                  <div className="corporateDocumentTitle" onClick={props.handleCorporateDocumentsShowFirstClose}>{company.name}</div>
+                  {company.corporateDocuments.map(document => {
+                    return (
+                      <div>
+                        <div>{document.name}</div>
+                        <img className="corporateDocumentImg" src={document.image}/>
+                      </div>
+                    )
+                  })}
+                </div>
+                </Container>
+                )
+            })}
+          </Form>
+          : 
+          <Form>
               <Container>
-              <div>
-                <div>{company.name}</div>
-                {company.corporateDocuments.map(document => {
+              <div className="corporateDocumentCard" >
+                <div className="corporateDocumentTitle" onClick={props.handleCorporateDocumentsShowFirstClose}>{props.data.users.companies[0].name}</div>
+                {props.data.users.companies[0].corporateDocuments.map(document => {
                   return (
-                    <div>{document.name}</div>
+                    <div>
+                      <div>{document.name}</div>
+                      <img className="corporateDocumentImg" src={document.image}/>
+                    </div>
                   )
                 })}
               </div>
               </Container>
-
-
-             )
-          })}
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            <Form.Group controlId="formBasicChecbox">
-              <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-          </Form>
+        </Form>
+          }
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={props.handleCorporateDocumentsClose}>
-            Close
-          </Button>
-          <Button variant="primary"  href="/client">
-            Save Changes
-          </Button>
-        </Modal.Footer>
+
       </Modal>
     )
   }

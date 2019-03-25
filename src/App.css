@@ -43,6 +43,18 @@
 .homePageMessageSub{
   height: 5vh;
 }
+.corporateDocumentImg {
+  width: 20vw;
+  height: 12vh;
+}
+.corporateDocumentTitle {
+  font-weight: bold;
+}
+.corporateDocumentCard {
+  border-style: solid;
+  padding-left: 1vw;
+  margin-bottom: 2vh;
+}
 
 .footer{
   background-color: rgb(0, 102, 153);

@@ -32,11 +32,14 @@ class App extends Component {
     this.handleCreateNewCompanyClose = this.handleCreateNewCompanyClose.bind(this);
     this.handleEditProfileClose = this.handleEditProfileClose.bind(this);
 
+    this.handleCorporateDocumentsShowFirstClose = this.handleCorporateDocumentsShowFirstClose.bind(this);
+
     this.state = {
       logInShow: false,
       signUpShow: false,
       mailForwardingShow: false,
       corporateDocumentsShow: false,
+      corporateDocumentsShowFirst: true,
       createNewCompanyShow: false ,
       editProfileShow: false,
       data: {
@@ -52,12 +55,12 @@ class App extends Component {
                   {
                     id: 1,
                     name: "tax stuff 1",
-                    image: "url to do",
+                    image: "https://media.nbcphiladelphia.com/images/652*367/1040a.jpg",
                   },
                   {
                     id: 2,
                     name: "tax stuff 2",
-                    image: "url to do",
+                    image: "https://media.nbcphiladelphia.com/images/652*367/1040a.jpg",
                   },
                 ]
               },
@@ -68,12 +71,12 @@ class App extends Component {
                   {
                     id: 1,
                     name: "tax stuff 1",
-                    image: "url to do",
+                    image: "https://media.nbcphiladelphia.com/images/652*367/1040a.jpg",
                   },
                   {
                     id: 2,
                     name: "tax stuff 2",
-                    image: "url to do",
+                    image: "https://digitalasset.intuit.com/IMAGE/A06yW2VcG/w-9_tax_form.jpg",
                   }
                 ]
               }
@@ -116,7 +119,7 @@ class App extends Component {
       }
     };
   }
-  
+
 
   handleLogInShow() {
     this.setState({ logInShow: true });
@@ -141,6 +144,10 @@ class App extends Component {
   }
   handleCorporateDocumentsClose() {
     this.setState({ corporateDocumentsShow: false });
+  }
+  handleCorporateDocumentsShowFirstClose() {
+    console.log("here")
+    this.setState({ corporateDocumentsShowFirst: this.state.corporateDocumentsShowFirst ? false: true });
   }
   handleCreateNewCompanyShow() {
     this.setState({ createNewCompanyShow: true });
@@ -174,9 +181,12 @@ class App extends Component {
                 (props) => <ClientHome
                   mailForwardingShow={this.state.mailForwardingShow}
                   corporateDocumentsShow={this.state.corporateDocumentsShow}
+                  corporateDocumentsShowFirst={this.state.corporateDocumentsShowFirst}
                   createNewCompanyShow={this.state.createNewCompanyShow}
                   editProfileShow={this.state.editProfileShow}
                   data={this.state.data}
+
+                  handleCorporateDocumentsShowFirstClose={this.handleCorporateDocumentsShowFirstClose}
 
                   handleMailForwardingClose={this.handleMailForwardingClose}
                   handleMailForwardingShow={this.handleMailForwardingShow}
@@ -187,6 +197,7 @@ class App extends Component {
                   handleEditProfileClose={this.handleEditProfileClose}
                   handleEditProfileShow={this.handleEditProfileShow}
                   />
+                  
               } />
               <Footer />
             </Router>

@@ -35,6 +35,8 @@ const ClientHome = (props) => {
           corporateDocumentsShow={props.corporateDocumentsShow}
           handleCorporateDocumentsClose={props.handleCorporateDocumentsClose}
           handleCorporateDocumentsShow={props.handleCorporateDocumentsShow}
+          corporateDocumentsShowFirst={props.corporateDocumentsShowFirst}
+          handleCorporateDocumentsShowFirstClose={props.handleCorporateDocumentsShowFirstClose}
         />
 
 
