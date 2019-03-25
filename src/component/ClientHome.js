@@ -31,6 +31,7 @@ const ClientHome = (props) => {
           </Row>
         </Container>
         <CorporateDocuments
+          data={props.data}
           corporateDocumentsShow={props.corporateDocumentsShow}
           handleCorporateDocumentsClose={props.handleCorporateDocumentsClose}
           handleCorporateDocumentsShow={props.handleCorporateDocumentsShow}

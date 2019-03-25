@@ -8,20 +8,29 @@ import { Form } from 'react-bootstrap';
 
 const CorporateDocuments = (props) => {
     return (
+      
         <Modal show={props.corporateDocumentsShow} onHide={props.handleCorporateDocumentsClose}>
         <Modal.Header closeButton>
           <Modal.Title>CorporateDocuments</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
+          {props.data.users.companies.map(company => {
+             return (
+              <Container>
+              <div>
+                <div>{company.name}</div>
+                {company.corporateDocuments.map(document => {
+                  return (
+                    <div>{document.name}</div>
+                  )
+                })}
+              </div>
+              </Container>
 
+
+             )
+          })}
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="Password" />

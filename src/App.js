@@ -38,9 +38,85 @@ class App extends Component {
       mailForwardingShow: false,
       corporateDocumentsShow: false,
       createNewCompanyShow: false ,
-      editProfileShow: false
+      editProfileShow: false,
+      data: {
+        users: {
+            id: 1,
+            userName: "teddy",
+            picture: "to do",
+            companies: [
+              {
+                id: 1,
+                name: "Inc. Plan",
+                corporateDocuments: [
+                  {
+                    id: 1,
+                    name: "tax stuff 1",
+                    image: "url to do",
+                  },
+                  {
+                    id: 2,
+                    name: "tax stuff 2",
+                    image: "url to do",
+                  },
+                ]
+              },
+              {
+                id: 2,
+                name: "Inc. Plan subsidiary",
+                corporateDocuments: [
+                  {
+                    id: 1,
+                    name: "tax stuff 1",
+                    image: "url to do",
+                  },
+                  {
+                    id: 2,
+                    name: "tax stuff 2",
+                    image: "url to do",
+                  }
+                ]
+              }
+            ],
+            mail: [
+              {
+                id: 1,
+                name: "Inc. Plan",
+                corporateDocuments: [
+                  {
+                    id: 1,
+                    name: "mail stuff 1",
+                    image: "url to do",
+                  },
+                  {
+                    id: 2,
+                    name: "mail stuff 2",
+                    image: "url to do",
+                  },
+                ]
+              },
+              {
+                id: 2,
+                name: "Inc. Plan subsidiary",
+                corporateDocuments: [
+                  {
+                    id: 1,
+                    name: "mail stuff 1",
+                    image: "url to do",
+                  },
+                  {
+                    id: 2,
+                    name: "mail stuff 2",
+                    image: "url to do",
+                  }
+                ]
+              }
+            ],
+        },
+      }
     };
   }
+  
 
   handleLogInShow() {
     this.setState({ logInShow: true });
@@ -61,7 +137,6 @@ class App extends Component {
     this.setState({ mailForwardingShow: false });
   }
   handleCorporateDocumentsShow() {
-    console.log("active")
     this.setState({ corporateDocumentsShow: true });
   }
   handleCorporateDocumentsClose() {
@@ -101,6 +176,8 @@ class App extends Component {
                   corporateDocumentsShow={this.state.corporateDocumentsShow}
                   createNewCompanyShow={this.state.createNewCompanyShow}
                   editProfileShow={this.state.editProfileShow}
+                  data={this.state.data}
+
                   handleMailForwardingClose={this.handleMailForwardingClose}
                   handleMailForwardingShow={this.handleMailForwardingShow}
                   handleCorporateDocumentsClose={this.handleCorporateDocumentsClose}
