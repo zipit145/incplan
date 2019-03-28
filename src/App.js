@@ -42,6 +42,7 @@ class App extends Component {
       corporateDocumentsShowFirst: true,
       createNewCompanyShow: false ,
       editProfileShow: false,
+      data2: {},
       data: {
         users: {
             id: 1,
@@ -120,7 +121,13 @@ class App extends Component {
     };
   }
 
-
+  async componentDidMount() {
+    const response = await fetch('https://incplan.herokuapp.com/')
+    const json = await response.json()
+    this.setState({
+      data2:[json]
+    })
+  }
   handleLogInShow() {
     this.setState({ logInShow: true });
   }
@@ -167,7 +174,7 @@ class App extends Component {
     return (
       <div className="App">
             <Router>
-              <Header />
+              <Header data2={this.state.data2}/>
               <Route exact path="/" render={
                 (props) => <Home
                   logInShow={this.state.logInShow}
