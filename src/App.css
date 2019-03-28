@@ -23,6 +23,16 @@
   color: #61dafb;
 }
 
+.logo{
+  float: left;
+}
+body {
+  background-color: #fbfcff
+}
+.buttonColor {
+  background-color: #f9a03f
+}
+
 .header {
   background-color: rgb(0, 102, 153);
   height: 10vh;

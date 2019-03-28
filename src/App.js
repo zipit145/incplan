@@ -43,6 +43,7 @@ class App extends Component {
       createNewCompanyShow: false ,
       editProfileShow: false,
       data2: {},
+      dataMount: false,
       data: {
         users: {
             id: 1,
@@ -125,7 +126,8 @@ class App extends Component {
     const response = await fetch('https://incplan.herokuapp.com/')
     const json = await response.json()
     this.setState({
-      data2:[json]
+      data2:[json],
+      dataMount: true,
     })
   }
   handleLogInShow() {
@@ -174,7 +176,7 @@ class App extends Component {
     return (
       <div className="App">
             <Router>
-              <Header data2={this.state.data2}/>
+              <Header data2={this.state.data2[0]} dataMount={this.state.dataMount}/>
               <Route exact path="/" render={
                 (props) => <Home
                   logInShow={this.state.logInShow}
