@@ -1,3 +1,7 @@
+:root {
+  --main-header-color: rgb(0, 102, 153);
+}
+
 .App {
   text-align: center;
 }
@@ -34,7 +38,7 @@ body {
 }
 
 .header {
-  background-color: rgb(0, 102, 153);
+  background-color: var(--main-header-color);
   height: 10vh;
   width: 100%;
 }
@@ -67,7 +71,7 @@ body {
 }
 
 .footer{
-  background-color: rgb(0, 102, 153);
+  background-color: var(--main-header-color);
   height: 10vh;
   width: 100%;
   position: absolute;
