@@ -26,7 +26,7 @@ const Home = (props) => {
               <Col lg={5}></Col>
               <Col lg={2}>
               <Row>
-                <Button className="buttonLogin buttonColor" onClick={props.handleLogInShow}>
+                <Button variant="dark" className="buttonLogin" onClick={props.handleLogInShow}>
                   Login
                 </Button>
               </Row>
