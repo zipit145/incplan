@@ -15,6 +15,9 @@ const Header = (props) => {
 
 <Navbar className="header" expand="lg">
   <Container>
+    {
+      console.log(props.data2)
+    }
     <Row className="headerRow">
       <Col xs={4}>
         <Image src="https://www.incplan.net/wp-content/uploads/2014/03/logo.png"/>

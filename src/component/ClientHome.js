@@ -13,20 +13,29 @@ const ClientHome = (props) => {
       <div>
         <Container>
           <Row>
-            <Col lg={5}></Col>
+            
             <Col lg={2}>
             <Row>
               <Button className="buttonClientHome" variant="dark" onClick={props.handleCorporateDocumentsShow}>Corporate Documents</Button>
             </Row>
             <Row>
-              <Button className="buttonClientHome" variant="dark" href="/">Mail Forwarding</Button>
+              <Button className="buttonClientHome" variant="dark" onClick={props.handleCorporateDocumentsShow}>Mail Forwarding</Button>
             </Row>
             <Row>
-              <Button className="buttonClientHome" variant="dark" href="/">Create New Company</Button>
+              <Button className="buttonClientHome" variant="dark" onClick={props.handleCorporateDocumentsShow}>Create New Company</Button>
             </Row>
             <Row>
-              <Button className="buttonClientHome" variant="dark" href="/">Edit profile</Button>
+              <Button className="buttonClientHome" variant="dark" onClick={props.handleCorporateDocumentsShow}>Edit profile</Button>
             </Row>
+            </Col>
+            <Col className="userDashboard" lg={10}>
+              <Row>
+                <Col lg={2}></Col>
+                <Col lg={6}>              
+                  <Row>Welcome Teddy Luben!</Row>
+                  <Row>You have 13 new work items to address!</Row>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Container>

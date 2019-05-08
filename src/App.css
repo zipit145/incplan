@@ -48,8 +48,9 @@ body {
   margin-bottom: 5vh;
 }
 .buttonClientHome{
-  margin: auto;
-  margin-top: 5vh;
+  width: 25vw;
+  height: 11.5vh;
+  margin: 0.5vh;
 }
 .homePageMessage{
   height: 15vh;
@@ -63,6 +64,10 @@ body {
 }
 .headerRow {
   width: 100%;
+}
+.userDashboard {
+  border: 1px solid #282c34;
+  height: 50vh;
 }
 .corporateDocumentTitle {
   font-weight: bold;
